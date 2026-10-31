@@ -1,0 +1,24 @@
+{
+  "name": "sprint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrmez2005-pixel/SDEV305-Sprints.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/rrmez2005-pixel/SDEV305-Sprints/issues"
+  },
+  "homepage": "https://github.com/rrmez2005-pixel/SDEV305-Sprints#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
