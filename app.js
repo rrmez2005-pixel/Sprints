@@ -6,8 +6,10 @@ const PORT = 4000;
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req,res) => {
-    res.render(`home.ejs`);
+    res.render(`home`);
 });
 
 app.get('/add-job', (req,res) => {
@@ -23,7 +25,7 @@ app.get('/confirm', (req,res) => {
 });
 
 app.get('/jobs', (req,res) => {
-    
+
 });
 
 app.listen(PORT, ()=>{
