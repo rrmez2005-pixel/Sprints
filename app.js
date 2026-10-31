@@ -7,7 +7,23 @@ const PORT = 4000;
 app.use(express.static('public'));
 
 app.get('/', (req,res) => {
-    res.sendFile(`${import.meta.dirname}/home.html`);
+    res.render(`home.ejs`);
+});
+
+app.get('/add-job', (req,res) => {
+
+});
+
+app.post('/submit-job', (req,res) => {
+
+});
+
+app.get('/confirm', (req,res) => {
+
+});
+
+app.get('/jobs', (req,res) => {
+    
 });
 
 app.listen(PORT, ()=>{
