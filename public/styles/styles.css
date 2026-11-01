@@ -1,0 +1,37 @@
+:root {
+    --primary-color:#09b4179f;
+}
+#header {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: linear-gradient(to bottom right, rgba(163, 163, 163, 0.178), var(--primary-color)), url("/images/banner.webp");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:50% 40%;
+    border-radius:1.5rem;
+    height:20rem;
+    color:white;
+}
+nav {
+    display:flex;
+    justify-content:center;
+}
+
+#navigation {
+    display:flex;
+    gap:2rem;
+}
+
+#navigation a {
+    background-color:var(--primary-color);
+    color:white;
+    margin-top:1rem;
+    padding:1rem;
+    border-radius:1rem;
+    text-decoration:none;
+}
+
+#navigation a:hover {
+    background-color:blue;
+}
