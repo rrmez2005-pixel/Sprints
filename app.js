@@ -27,7 +27,7 @@ app.get('/confirm', (req,res) => {
 });
 
 app.get('/jobs', (req,res) => {
-
+    res.render('jobs');
 });
 
 app.listen(PORT, ()=> {
