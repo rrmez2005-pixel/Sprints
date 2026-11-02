@@ -1,5 +1,9 @@
 :root {
     --primary-color:#09b4179f;
+    --greenriver-green:rgb(21, 155, 3);
+}
+* {
+    box-sizing:border-box;
 }
 #header {
     display:flex;
@@ -10,6 +14,7 @@
     background-repeat:no-repeat;
     background-position:50% 40%;
     border-radius:1.5rem;
+    padding:2rem;
     height:20rem;
     color:white;
 }
@@ -21,15 +26,21 @@ nav {
 #navigation {
     display:flex;
     gap:2rem;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 #navigation a {
-    background-color:var(--primary-color);
+    display:flex;
+    background-color:var(--greenriver-green);
     color:white;
     margin-top:1rem;
     padding:1rem;
     border-radius:1rem;
     text-decoration:none;
+    align-self:center;
+    justify-content:center;
+    width:9rem;
 }
 
 #navigation a:hover {
