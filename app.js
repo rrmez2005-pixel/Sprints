@@ -15,7 +15,7 @@ app.get('/', (req,res) => {
 });
 
 app.get('/add-job', (req,res) => {
-
+    res.render('addjob');
 });
 
 app.post('/submit-job', (req,res) => {

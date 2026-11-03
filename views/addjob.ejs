@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job</title>
+    <link rel="stylesheet" href="styles/addjobstyles.css">
+</head>
+<body>
+    <main>
+        <div id="main">
+            <h1>Add a job</h1>
+            <form id="job-form" action="#" method="get">
+                <fieldset id="title-field">
+                    <label for="job-title">Job Title
+                        <input type="text" id="job-title" name="job-title">
+                    </label>
+                </fieldset>
+                <fieldset id="employment-field">
+                    <legend>Employment</legend>
+                    <label>
+                        <input type="radio" id="full-time" name="employment"> Full time
+                    </label>
+                    <label>
+                        <input type="radio" id="part-time" name="employment"> Part time
+                    </label>
+                    <lable>
+                        <input type="radio" id="other" name="employment"> Other
+                    </lable>
+                    <div id="other-field">
+                        <input type="text" id="other-text" placeholder="Other please specify">
+                    </div>
+                </fieldset>
+                <fieldset id="trade-field">
+                    <label for="trade"> Trade
+                        <select id="trade" name="trade">
+                            <option value="none"> - Select Trade -</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="carpentry">Carpentry</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="mechatronics">Mechatronics</option>
+                            <option value="welding">Welding</option>
+                        </select>
+                    </label>
+                    <label for="app-link">Link to application
+                        <input type="url">
+                    </label>
+                </fieldset>
+                <fieldset id="date-location">
+                    <label for="location"> Location
+                        <input type="text">
+                    </label>
+                    <label for="date-posted" id="posted-label">Date posted
+                        <input type="date" name="date-posted" id="date-posted">
+                    </label>
+                    <label for="date-expires"> Date expires
+                        <input type="date" name="date-expires" id="date-expires">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label>
+                        <input type="checkbox"> Make announcement with post
+                    </label>
+                </fieldset>
+                <button type="submit" id="post-job">Post Job</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
