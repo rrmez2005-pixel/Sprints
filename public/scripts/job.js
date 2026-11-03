@@ -71,6 +71,11 @@ document.getElementById("jobform").onsubmit = () => {
         isValid = false;
     }
 
+    if(announcement.checked && message.value.trim() === ""){
+        document.getElementById("message-err").style.display = "block";
+        isValid= false;
+    }
+
     return isValid;
 }
 
