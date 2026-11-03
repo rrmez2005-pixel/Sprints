@@ -13,6 +13,32 @@
     <main>
         <div id="main">
             <!-- Job data table goes here -->
+             <table id="jobtable">
+                 <thead>
+                     <tr>
+                         <th>Job Title</th>
+                         <th>Employment</th>
+                         <th>Trade</th>
+                         <th>Location</th>
+                         <th>Date Posted</th>
+                         <th>Date Expires</th>
+                         <th>Apply</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <% jobs.forEach(job => { %>
+                     <tr>
+                         <td><%= job.jobtitle %></td>
+                         <td><%= job.employment %></td>
+                         <td><%= job.trade %></td>
+                         <td><%= job.location %></td>
+                         <td><%= job.dateposted %></td>
+                         <td><%= job.dateexpires %></td>
+                         <td><a href="#">Apply</a></td>
+                     </tr>
+                     <% }); %>
+                 </tbody>
+             </table>
         </div>
     </main>
 </body>

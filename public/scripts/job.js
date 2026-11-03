@@ -1,3 +1,14 @@
+let announcement = document.getElementById("announcement");
+let message = document.getElementById("message");
+let announcementLabel = document.getElementById("announcement-label");
+
+announcement.onchange = () => {
+    message.style.display = "block";
+    announcementLabel.style.display = "block";
+}
+
+
+
 document.getElementById("jobform").onsubmit = () => {
     let isValid = true;
 
@@ -9,6 +20,10 @@ document.getElementById("jobform").onsubmit = () => {
     let trade = document.getElementById("trade").value;
     let appLink = document.getElementById("applink").value;
     let location = document.getElementById("location").value.trim();
+    let datePosted = document.getElementById("dateposted").value;
+    let dateExpires = document.getElementById("dateexpires").value;
+
+    const today = new Date().toLocaleDateString("en-CA");
 
     const urlRegex = /^https?:\/\/(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?::\d{2,5})?(?:[/?#]\S*)?$/i;
 
@@ -45,6 +60,16 @@ document.getElementById("jobform").onsubmit = () => {
 
     if(location === ""){
         document.getElementById("err-location").style.display = "block";
+        isValid = false;
+    }
+
+    if(datePosted === ""){
+        document.getElementById("err-dateposted").style.display = "block";
+        isValid = false;
+    }
+
+    if(dateExpires < today || dateExpires === ""){
+        document.getElementById("err-dateexpired").style.display = "block";
         isValid = false;
     }
 
