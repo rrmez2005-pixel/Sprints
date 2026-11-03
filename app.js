@@ -20,19 +20,16 @@ app.get('/add-job', (req,res) => {
     res.render('addjob');
 });
 
-app.post('/submit-job', (req,res) => {
-    const newJob = {
-        jobtitle: req.body.jobtitle,
-        employment: req.body.employment,
-        trade: req.body.trade,
-        location: req.body.location,
-        dateposted: req.body.dateposted,
-        dateexpires: req.body.dateexpires
-    };
+app.post('/submit-job', (req, res) => {
+    const job = req.body;
+    job.timestamp = new Date();
 
-    jobs.push(newJob);
+    console.log(job);
 
-    res.redirect('/confirm');
+    jobs.push(job);
+    console.log(jobs);
+
+    res.render('confirm', { job });
 });
 
 app.get('/confirm', (req,res) => {
