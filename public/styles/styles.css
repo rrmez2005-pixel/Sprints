@@ -7,8 +7,10 @@
 }
 #header {
     display:flex;
+    flex-direction: column;
     justify-content:center;
     align-items:center;
+    text-align:center;
     background-image: linear-gradient(to bottom right, rgba(163, 163, 163, 0.178), var(--primary-color)), url("/images/banner.webp");
     background-size:cover;
     background-repeat:no-repeat;
