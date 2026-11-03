@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Board</title>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+
     <!-- Favicon -->
      <link rel="icon" href="images/GRC.png">
 </head>
@@ -42,6 +46,9 @@
                      <% }); %>
                  </tbody>
              </table>
+             <script>
+                new DataTable('#order-table');
+             </script>
         </div>
     </main>
 </body>
