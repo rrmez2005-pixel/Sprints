@@ -34,7 +34,10 @@
                          <td><%= job.location %></td>
                          <td><%= job.dateposted %></td>
                          <td><%= job.dateexpires %></td>
-                         <td><a href="#">Apply</a></td>
+                         <td>
+                            <!-- Dynamic EJS link using what the user typed -->
+                            <a href="<%= job.applink %>" target="_blank">Apply</a>
+                        </td>
                      </tr>
                      <% }); %>
                  </tbody>
