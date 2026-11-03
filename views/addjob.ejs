@@ -17,6 +17,9 @@
                     <label for="jobtitle">Job Title
                         <input type="text" id="jobtitle" name="jobtitle">
                     </label>
+                    <label for="company"> Company
+                        <input type="text" id="company" name="company"> 
+                    </label>
                 </fieldset>
                 <fieldset id="employmentfield">
                     <legend>Employment</legend>
@@ -59,18 +62,20 @@
                     <div id="datefield">
                         <span class="err" id="err-dateposted">Please enter a posted date</span>
                         <label for="dateposted" id="posted-label">Date posted
-                            <input type="date" name="date-posted" id="dateposted">
+                            <input type="date" name="dateposted" id="dateposted">
                         </label>
                         <span class="err" id="err-dateexpired">Please enter an expiration date</span>
                         <label for="dateexpires"> Date expires
-                            <input type="date" name="date-expires" id="dateexpires">
+                            <input type="date" name="dateexpires" id="dateexpires">
                         </label>
                     </div>
                 </fieldset>
-                <fieldset>
+                <fieldset id="announcement-field">
                     <label for="announcement">
                         <input type="checkbox" id="announcement"> Make announcement with post
                     </label>
+                    <label for="message" id="announcement-label">Announcement</label>
+                    <textarea id="message" name="message"></textarea>
                 </fieldset>
                 <button type="submit" id="postjob">Post Job</button>
             </form>

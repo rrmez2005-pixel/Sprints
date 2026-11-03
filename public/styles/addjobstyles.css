@@ -27,7 +27,11 @@ main {
 fieldset {
     border:none;
 }
-
+#titlefield, #tradefield, #announcement-field {
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
 #titlefield label{
     display:flex;
     flex-direction:column;
@@ -54,12 +58,6 @@ fieldset {
     display:flex;
     flex-direction:column;
     justify-content:center;
-}
-
-#tradefield {
-    display:flex;
-    flex-direction:column;
-    gap:1rem;
 }
 
 #datelocation {
@@ -101,4 +99,13 @@ button:hover {
     align-items:flex-start;
     gap:1rem;
 
+}
+
+#announcement-label {
+    display:none;
+}
+
+#message {
+    display:none;
+    height:5rem;
 }
