@@ -5,33 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Job</title>
     <link rel="stylesheet" href="styles/addjobstyles.css">
+    <script src="/scripts/job.js" defer></script>
 </head>
 <body>
     <main>
         <div id="main">
             <h1>Add a job</h1>
-            <form id="job-form" action="#" method="get">
-                <fieldset id="title-field">
-                    <label for="job-title">Job Title
-                        <input type="text" id="job-title" name="job-title">
+            <form id="jobform" action="#" method="get" novalidate>
+                <fieldset id="titlefield">
+                    <span class="err" id="err-title">Please enter a job title</span>
+                    <label for="jobtitle">Job Title
+                        <input type="text" id="jobtitle" name="jobtitle">
                     </label>
                 </fieldset>
-                <fieldset id="employment-field">
+                <fieldset id="employmentfield">
                     <legend>Employment</legend>
+                    <span class="err" id="err-employment"> Please select an employment type</span>
                     <label>
-                        <input type="radio" id="full-time" name="employment"> Full time
+                        <input type="radio" id="fulltime" name="employment" value="full"> Full time
                     </label>
                     <label>
-                        <input type="radio" id="part-time" name="employment"> Part time
+                        <input type="radio" id="parttime" name="employment" value="part"> Part time
                     </label>
-                    <lable>
-                        <input type="radio" id="other" name="employment"> Other
-                    </lable>
-                    <div id="other-field">
-                        <input type="text" id="other-text" placeholder="Other please specify">
+                    <label>
+                        <input type="radio" id="other" name="employment" value="other"> Other
+                    </label>
+                    <div id="otherfield">
+                        <input type="text" id="othertext" placeholder="Other please specify">
                     </div>
                 </fieldset>
-                <fieldset id="trade-field">
+                <fieldset id="tradefield">
+                    <span class="err" id="err-trade">Please select a trade</span>
                     <label for="trade"> Trade
                         <select id="trade" name="trade">
                             <option value="none"> - Select Trade -</option>
@@ -42,27 +46,33 @@
                             <option value="welding">Welding</option>
                         </select>
                     </label>
-                    <label for="app-link">Link to application
-                        <input type="url">
+                    <span class="err" id="err-link">Please input a proper link</span>
+                    <label for="applink">Link to application
+                        <input type="url" id="applink" name="applink">
                     </label>
                 </fieldset>
-                <fieldset id="date-location">
+                <fieldset id="datelocation">
+                    <span class="err" id="err-location">Please enter a location</span>
                     <label for="location"> Location
-                        <input type="text">
+                        <input type="text" id="location" name="location">
                     </label>
-                    <label for="date-posted" id="posted-label">Date posted
-                        <input type="date" name="date-posted" id="date-posted">
-                    </label>
-                    <label for="date-expires"> Date expires
-                        <input type="date" name="date-expires" id="date-expires">
-                    </label>
+                    <div id="datefield">
+                        <span class="err" id="err-dateposted">Please enter a posted date</span>
+                        <label for="dateposted" id="posted-label">Date posted
+                            <input type="date" name="date-posted" id="dateposted">
+                        </label>
+                        <span class="err" id="err-dateexpired">Please enter an expiration date</span>
+                        <label for="dateexpires"> Date expires
+                            <input type="date" name="date-expires" id="dateexpires">
+                        </label>
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <label>
-                        <input type="checkbox"> Make announcement with post
+                    <label for="announcement">
+                        <input type="checkbox" id="announcement"> Make announcement with post
                     </label>
                 </fieldset>
-                <button type="submit" id="post-job">Post Job</button>
+                <button type="submit" id="postjob">Post Job</button>
             </form>
         </div>
     </main>
