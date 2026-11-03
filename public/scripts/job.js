@@ -7,8 +7,6 @@ announcement.onchange = () => {
     announcementLabel.style.display = "block";
 }
 
-
-
 document.getElementById("jobform").onsubmit = () => {
     let isValid = true;
 
