@@ -14,17 +14,16 @@
             <h1>Add a job</h1>
             <form id="jobform" action="/submit-job" method="post" novalidate>
                 <fieldset id="titlefield">
-                    <span class="err" id="err-title">Please enter a job title</span>
                     <label for="jobtitle">Job Title
                         <input type="text" id="jobtitle" name="jobtitle">
                     </label>
+                    <span class="err" id="err-title">Please enter a job title</span>
                     <label for="company"> Company
                         <input type="text" id="company" name="company"> 
                     </label>
                 </fieldset>
                 <fieldset id="employmentfield">
                     <legend>Employment</legend>
-                    <span class="err" id="err-employment"> Please select an employment type</span>
                     <label>
                         <input type="radio" id="fulltime" name="employment" value="full"> Full time
                     </label>
@@ -37,9 +36,9 @@
                     <div id="otherfield">
                         <input type="text" id="othertext" placeholder="Other please specify">
                     </div>
+                    <span class="err" id="err-employment"> Please select an employment type</span>
                 </fieldset>
                 <fieldset id="tradefield">
-                    <span class="err" id="err-trade">Please select a trade</span>
                     <label for="trade"> Trade
                         <select id="trade" name="trade">
                             <option value="none"> - Select Trade -</option>
@@ -50,25 +49,26 @@
                             <option value="welding">Welding</option>
                         </select>
                     </label>
-                    <span class="err" id="err-link">Please input a proper link</span>
+                    <span class="err" id="err-trade">Please select a trade</span>
                     <label for="applink">Link to application
                         <input type="url" id="applink" name="applink">
                     </label>
+                    <span class="err" id="err-link">Please input a proper link</span>
                 </fieldset>
                 <fieldset id="datelocation">
-                    <span class="err" id="err-location">Please enter a location</span>
                     <label for="location"> Location
                         <input type="text" id="location" name="location">
                     </label>
+                    <span class="err" id="err-location">Please enter a location</span>
                     <div id="datefield">
-                        <span class="err" id="err-dateposted">Please enter a posted date</span>
                         <label for="dateposted" id="posted-label">Date posted
                             <input type="date" name="dateposted" id="dateposted">
                         </label>
-                        <span class="err" id="err-dateexpired">Please enter an expiration date</span>
+                        <span class="err" id="err-dateposted">Please enter a posted date</span>
                         <label for="dateexpires"> Date expires
                             <input type="date" name="dateexpires" id="dateexpires">
                         </label>
+                        <span class="err" id="err-dateexpired">Please enter an expiration date</span>
                     </div>
                 </fieldset>
                 <fieldset id="announcement-field">
