@@ -1,5 +1,4 @@
 /*Hamburger menu css */
-/* Drawer container */
 .sidebar {
     height: 100%;
     width: 0;
@@ -14,7 +13,6 @@
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Links inside drawer */
 .sidebar a {
     display: block;
     padding: 12px 20px;
@@ -29,7 +27,6 @@
     color: white;
 }
 
-/* Backdrop */
 .overlay {
     display: none;
     position: fixed;
@@ -41,7 +38,6 @@
     z-index: 99;
 }
 
-/* Hamburger trigger */
 .hamburger {
     font-size: 24px;
     background: none;
