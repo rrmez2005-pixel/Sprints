@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Board</title>
+    <link rel="stylesheet" href="styles/styles.css">
 
     <!-- DataTable -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css">
+    <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
     <!-- Favicon -->
      <link rel="icon" href="images/GRC.png">
 </head>
@@ -18,42 +20,49 @@
     <main>
         <div id="main">
             <!-- Job data table goes here -->
-             <table id="jobtable">
-                 <thead>
-                     <tr>
-                         <th>Job Title</th>
-                         <th>Company</th>
-                         <th>Employment</th>
-                         <th>Trade</th>
-                         <th>Location</th>
-                         <th>Date Posted</th>
-                         <th>Date Expires</th>
-                         <th>Apply</th>
-                     </tr>
-                 </thead>
-                 <tbody>
-                     <% jobs.forEach(job => { %>
-                     <tr>
-                         <td><%= job.jobtitle %></td>
-                         <td><%= job.company %></td>
-                         <td><%= job.employment %></td>
-                         <td><%= job.trade %></td>
-                         <td><%= job.location %></td>
-                         <td><%= job.dateposted %></td>
-                         <td><%= job.dateexpires %></td>
-                         <td>
-                            <!-- Dynamic EJS link using what the user typed -->
-                            <a href="<%= job.applink %>" target="_blank">Apply</a>
-                        </td>
-                     </tr>
-                     <% }); %>
-                 </tbody>
-             </table>
+             <div class="table-wrap">
+                <table id="jobtable">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company</th>
+                            <th>Employment</th>
+                            <th>Trade</th>
+                            <th>Location</th>
+                            <th>Date Posted</th>
+                            <th>Date Expires</th>
+                            <th>Apply</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% jobs.forEach(job => { %>
+                        <tr>
+                            <td><%= job.jobtitle %></td>
+                            <td><%= job.company %></td>
+                            <td><%= job.employment %></td>
+                            <td><%= job.trade %></td>
+                            <td><%= job.location %></td>
+                            <td><%= job.dateposted %></td>
+                            <td><%= job.dateexpires %></td>
+                            <td>
+                                <!-- Dynamic EJS link using what the user typed -->
+                                <a href="<%= job.applink %>" target="_blank">Apply</a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+             </div>
              <script>
                 new DataTable('#jobtable', {
+                    responsive:true,
+
                     language: {
                         emptyTable: 'No jobs available at this time'
-                    }
+                    },
+                    columnDefs: [
+                        { orderable: false, targets: 7}
+                    ]
                 });
              </script>
         </div>

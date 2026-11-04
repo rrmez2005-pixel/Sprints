@@ -53,6 +53,11 @@ nav {
     margin-top: 3.5rem;
 }
 
+.table-wrap {
+    width:100%;
+    overflow-x: auto;
+}
+
 @media (max-width: 450px) {
     #header h1 {
         font-size:1.35rem;
