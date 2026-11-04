@@ -78,6 +78,17 @@ fieldset {
     gap:.5rem;
 }
 
+button.hamburger {
+    display: inline-block;
+    justify-self: auto;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: black;       
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
 button {
     display:flex;
     justify-self:center;

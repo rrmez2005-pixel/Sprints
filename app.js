@@ -41,7 +41,7 @@ app.get('/confirm', (req,res) => {
 });
 
 app.get('/jobs', (req,res) => {
-    res.render('jobs', { jobs });
+    res.render('jobs', { jobs, formatDate });
 });
 
 app.get('/announcements', (req,res) => {
