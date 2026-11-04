@@ -15,7 +15,7 @@
         <div id="main">
             <% jobs.forEach(job => { %>
             <div class="job-announcement">
-                <h2><%= job.company %> posted <%= new Date(job.dateposted).toLocaleDateString('en-US', {dateStyle: 'short', timeZone: 'UTC'}) %></h2>
+                <h2>Job for <%= job.company %> posted <%= formatDate(job.dateposted)%></h2>
                 <p><%= job.location %></p>
                 <p><%= job.message %></p>
                 <a href="<%= job.applink %>">apply here</a>

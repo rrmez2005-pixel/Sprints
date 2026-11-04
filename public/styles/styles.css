@@ -77,6 +77,18 @@ nav {
     padding: 6px 10px;
 }
 
+.apply {
+    background-color:var(--greenriver-green);
+    text-decoration: none;
+    padding:.3rem .6rem;
+    border-radius:.5rem;
+    color:white;
+    margin:.5rem 0;
+}
+
+.apply:hover {
+    background-color:blue;
+}
 
 #navigation {
     display:flex;
@@ -112,7 +124,7 @@ nav {
     width: auto;
     height: auto;
     display: block;
-
+}
 .table-wrap {
     width:100%;
     overflow-x: auto;
@@ -143,4 +155,3 @@ nav {
         margin-top:3.5rem;
     }
   }
-}

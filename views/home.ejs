@@ -76,11 +76,11 @@
                             <td><%= job.employment %></td>
                             <td><%= job.trade %></td>
                             <td><%= job.location %></td>
-                            <td data-order="<%= new Date(job.dateposted).getTime() %>"><%= job.dateposted %></td>
-                            <td data-order="<%= new Date(job.dateexpires).getTime() %>"><%= job.dateexpires %></td>
+                            <td><%= formatDate(job.dateposted) %></td>
+                            <td><%= formatDate(job.dateexpires) %></td>
                             <td>
                                 <!-- Dynamic EJS link using what the user typed -->
-                                <a href="<%= job.applink %>" target="_blank">Apply</a>
+                                <a href="<%= job.applink %>" target="_blank" class="apply">Apply</a>
                             </td>
                         </tr>
                         <% }); %>

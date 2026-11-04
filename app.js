@@ -6,6 +6,10 @@ const PORT = 4000;
 
 const jobs = [];
 
+function formatDate(value) {
+    return new Date(value).toLocaleDateString('en-US', {dateStyle:'short',timeZone: 'UTC'});
+}
+
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
@@ -13,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req,res) => {
-    res.render('home', { jobs });
+    res.render('home', { jobs, formatDate });
 });
 
 app.get('/add-job', (req,res) => {
@@ -41,7 +45,7 @@ app.get('/jobs', (req,res) => {
 });
 
 app.get('/announcements', (req,res) => {
-    res.render('announcement', { jobs });
+    res.render('announcement', { jobs, formatDate });
 });
 
 app.listen(PORT, ()=> {
