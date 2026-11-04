@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Board</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/hamburger.css">
+    <script src="scripts/script.js" defer></script>
 
     <!-- DataTable -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -14,6 +16,23 @@
     <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
     <!-- Favicon -->
      <link rel="icon" href="images/GRC.png">
+
+     <!--top hamburger menu-->
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="https://www.greenriver.edu/index.html">
+            <img id="GRCimage" src="/images/GRC.png" alt="Green River College Logo">
+        </a>
+        <a href="">Sign in</a>
+        <a href="">Sign out</a>
+        <a href="/jobs">Job board</a>
+        <a href="/announcements">Announcements</a>
+        <a href="https://www.greenriver.edu/students/student-support-and-services/index.html">Help</a>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+    
 </head>
 <body>
     <h1>Job Board</h1>

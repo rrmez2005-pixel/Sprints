@@ -1,0 +1,59 @@
+/*Hamburger menu css */
+/* Drawer container */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    z-index: 100;
+    padding-top: 60px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Links inside drawer */
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #0f9e22;
+    color: white;
+}
+
+/* Backdrop */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99;
+}
+
+/* Hamburger trigger */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+#GRCimage {
+    max-width: 50px;
+    max-height: 50px;
+    height: auto;
+    width: auto;
+    display: block;
+}
