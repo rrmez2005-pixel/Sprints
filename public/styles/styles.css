@@ -112,6 +112,10 @@ nav {
     width: auto;
     height: auto;
     display: block;
+
+.table-wrap {
+    width:100%;
+    overflow-x: auto;
 }
 
 @media (max-width: 450px) {
@@ -138,4 +142,5 @@ nav {
     #main {
         margin-top:3.5rem;
     }
+  }
 }

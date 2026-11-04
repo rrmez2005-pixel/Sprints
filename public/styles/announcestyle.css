@@ -1,0 +1,45 @@
+body {
+    background-color:green;
+}
+
+h1 {
+    text-align:center;
+    color:white;
+}
+
+main {
+    margin: 0 auto;
+    width:80%;
+}
+
+#nav {
+    display:flex;
+    justify-content:center;
+}
+
+#nav a {
+    text-align: center;
+    text-decoration: none;
+    border-radius:1rem;
+    color:green;
+    background-color:white;
+    width:4rem;
+    padding:1rem;
+}
+
+#main {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.job-announcement {
+    display:flex;
+    flex-direction:column;
+    background-color:white;
+    justify-content:flex-start;
+    align-items:stretch;
+    margin:1rem;
+    padding:2rem;
+    border-radius:1rem;
+}
