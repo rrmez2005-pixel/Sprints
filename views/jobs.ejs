@@ -22,6 +22,7 @@
                  <thead>
                      <tr>
                          <th>Job Title</th>
+                         <th>Company</th>
                          <th>Employment</th>
                          <th>Trade</th>
                          <th>Location</th>
@@ -34,6 +35,7 @@
                      <% jobs.forEach(job => { %>
                      <tr>
                          <td><%= job.jobtitle %></td>
+                         <td><%= job.company %></td>
                          <td><%= job.employment %></td>
                          <td><%= job.trade %></td>
                          <td><%= job.location %></td>
@@ -48,7 +50,11 @@
                  </tbody>
              </table>
              <script>
-                new DataTable('#jobtable');
+                new DataTable('#jobtable', {
+                    language: {
+                        emptyTable: 'No jobs available at this time'
+                    }
+                });
              </script>
         </div>
     </main>
