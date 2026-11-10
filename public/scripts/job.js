@@ -47,7 +47,7 @@ document.getElementById("jobform").onsubmit = () => {
     }
 
     if(!urlRegex.test(appLink) && appLink !== ""){
-        document.getElemenyById("err-link").style.display = "block";
+        document.getElementById("err-link").style.display = "block";
         isValid = false;
     }
 
