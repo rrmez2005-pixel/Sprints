@@ -13,6 +13,7 @@ document.getElementById("jobform").onsubmit = () => {
     clearErrors();
 
     let title = document.getElementById("jobtitle").value.trim();
+    let company = document.getElementById("company").value;
     let employmentSelected = false;
     let employment = document.getElementsByName("employment");
     let trade = document.getElementById("trade").value;
@@ -27,6 +28,11 @@ document.getElementById("jobform").onsubmit = () => {
 
     if(title === ""){
         document.getElementById("err-title").style.display = "block";
+        isValid = false;
+    }
+
+    if(company === ""){
+        document.getElementById("err-company").style.display = "block";
         isValid = false;
     }
 
