@@ -56,6 +56,7 @@ app.post('/submit-job', async(req, res) => {
     const params = [
         job.jobtitle,
         job.company,
+        job.job,
         job.employment,
         job.trade,
         job.applink,
