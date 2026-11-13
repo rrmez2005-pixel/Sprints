@@ -1,14 +1,11 @@
 //import express
 import express from 'express';
 
-// Import mysql
 import mysql2 from 'mysql2';
 
-// Import .env
 import dotenv from 'dotenv';
 dotenv.config();
 
-// Create a connection pool
 const pool = mysql2.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -41,15 +38,29 @@ app.get('/add-job', (req,res) => {
     res.render('addjob');
 });
 
-app.post('/submit-job', (req, res) => {
+app.post('/submit-job', async(req, res) => {
     const job = req.body;
     job.timestamp = new Date();
-
     console.log(job);
 
+    const sql = `INSERT INTO jobs (jobtitle, company, job, employment, trade, applink, location, dateposted, dateexpires)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    
+    const params = [
+        job.jobtitle,
+        job.company,
+        job.employment,
+        job.trade,
+        job.applink,
+        job.location,
+        job.dateposted,
+        job.dateexpires
+    ];
+
+    const [result] = await pool.execute(sql, params);    
+    
     jobs.push(job);
     console.log(jobs);
-
     res.render('confirm', { job });
 });
 

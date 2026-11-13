@@ -21,6 +21,8 @@ document.getElementById("jobform").onsubmit = () => {
     let location = document.getElementById("location").value.trim();
     let datePosted = document.getElementById("dateposted").value;
     let dateExpires = document.getElementById("dateexpires").value;
+    let jobTypeSelected = false;
+    let jobType = document.getElementsByName("job");
 
     const today = new Date().toLocaleDateString("en-CA");
 
@@ -35,11 +37,21 @@ document.getElementById("jobform").onsubmit = () => {
         document.getElementById("err-company").style.display = "block";
         isValid = false;
     }
+    for(let i = 0; i < jobType.length; i++){
+        if(jobType[i].checked){
+            jobTypeSelected = true;
+        }
+    }
 
     for(let i = 0; i < employment.length; i++){
         if(employment[i].checked){
             employmentSelected = true;
         }
+    }
+
+    if(!jobTypeSelected){
+        document.getElementById("err-job").style.display = "block";
+        isValid = false;
     }
 
     if(!employmentSelected){

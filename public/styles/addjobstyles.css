@@ -40,19 +40,19 @@ fieldset {
     gap:.5rem;
 }
 
-#employmentfield legend{
+#employmentfield legend, #job-type legend{
     padding:0;
     margin-top:2rem;
 }
 
-#employmentfield {
+#employmentfield, #job-type {
     display:flex;
     flex-wrap:wrap;
     gap:3rem;
     align-items:center;
 }
 
-#employmentfield .err {
+#employmentfield .err, #job-type .err {
     flex-basis:100%;
 }
 
