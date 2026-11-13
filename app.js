@@ -30,8 +30,16 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', (req,res) => {
-    res.render('home', { jobs, formatDate });
+app.get('/', async(req,res) => {
+    try{
+        const [jobs] = await 
+        pool.query('SELECT * FROM jobs');
+        console.log(jobs);
+        res.render('home', { jobs, formatDate });
+    } catch(err) {
+        console.error("Database error: " + err);
+        res.status(500).send("Database error occured.");
+    } 
 });
 
 app.get('/add-job', (req,res) => {
@@ -58,9 +66,9 @@ app.post('/submit-job', async(req, res) => {
     ];
 
     const [result] = await pool.execute(sql, params);    
-    
-    jobs.push(job);
-    console.log(jobs);
+    job.id = result.insertId;
+
+    console.log("A new row was inserted with ID: " + result.id);
     res.render('confirm', { job });
 });
 
@@ -68,8 +76,16 @@ app.get('/confirm', (req,res) => {
     res.render('confirm');
 });
 
-app.get('/jobs', (req,res) => {
-    res.render('jobs', { jobs, formatDate });
+app.get('/jobs', async(req,res) => {
+    try {
+        const [jobs] = await
+        pool.query('SELECT * FROM jobs');
+        console.log(jobs);
+        res.render('jobs', { jobs, formatDate });
+    } catch (err) {
+        console.error("Database error: " + err);
+        res.status(500).send("Database error occured.");
+    } 
 });
 
 app.get('/announcements', (req,res) => {
