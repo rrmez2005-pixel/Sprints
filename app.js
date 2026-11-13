@@ -1,5 +1,18 @@
 import express from 'express';
 
+import mysql2 from 'mysql2';
+
+import dotenv from 'dotenv';
+dotenv.config();
+
+const pool = mysql2.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+}).promise();
+
 const app = express();
 
 const PORT = 4000;
@@ -24,15 +37,29 @@ app.get('/add-job', (req,res) => {
     res.render('addjob');
 });
 
-app.post('/submit-job', (req, res) => {
+app.post('/submit-job', async(req, res) => {
     const job = req.body;
     job.timestamp = new Date();
-
     console.log(job);
 
+    const sql = `INSERT INTO jobs (jobtitle, company, job, employment, trade, applink, location, dateposted, dateexpires)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    
+    const params = [
+        job.jobtitle,
+        job.company,
+        job.employment,
+        job.trade,
+        job.applink,
+        job.location,
+        job.dateposted,
+        job.dateexpires
+    ];
+
+    const [result] = await pool.execute(sql, params);    
+    
     jobs.push(job);
     console.log(jobs);
-
     res.render('confirm', { job });
 });
 
