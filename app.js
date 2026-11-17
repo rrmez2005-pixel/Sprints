@@ -77,8 +77,18 @@ app.post('/submit-job', async(req, res) => {
     
 });
 
-app.get('/confirm', (req,res) => {
-    res.render('confirm');
+app.get('/confirm', async(req,res) => {
+    try{
+        const [jobs] = await 
+        pool.query('SELECT * FROM jobs');
+        console.log(jobs);
+        //gets the job that was last added to the datbase
+        const job = jobs[jobs.length - 1];
+        res.render('confirm', { job });
+    } catch(err) {
+        console.error("Database error: " + err);
+        res.status(500).send("Database error occured.");
+    } 
 });
 
 app.get('/jobs', async(req,res) => {
