@@ -125,6 +125,18 @@ nav {
     height: auto;
     display: block;
 }
+
+/*top bar area where hamburger menu and GRC trades go */
+.guideNav {
+    display: flex;
+    align-items: center;
+}
+
+.GRCtrades {
+    display: flex;
+    /* font-weight: ;  Maybe add like a cool font? Probaly gonna leave to someone creative*/ 
+}
+
 .table-wrap {
     width:100%;
     overflow-x: auto;
