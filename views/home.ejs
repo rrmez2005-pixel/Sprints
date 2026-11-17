@@ -64,20 +64,22 @@
                     </thead>
                     <tbody>
                         <% jobs.forEach(job => { %>
-                        <tr>
-                            <td><%= job.jobtitle %></td>
-                            <td><%= job.company %></td>
-                            <td><%= job.job %></td>
-                            <td><%= job.employment %></td>
-                            <td><%= job.trade %></td>
-                            <td><%= job.location %></td>
-                            <td><%= formatDate(job.dateposted) %></td>
-                            <td><%= formatDate(job.dateexpires) %></td>
-                            <td>
-                                <!-- Dynamic EJS link using what the user typed -->
-                                <a href="<%= job.applink %>" target="_blank" class="apply">Apply</a>
-                            </td>
-                        </tr>
+                            <% if(job.dateexpires >= new Date()) { %>
+                                <tr>
+                                    <td><%= job.jobtitle %></td>
+                                    <td><%= job.company %></td>
+                                    <td><%= job.job %></td>
+                                    <td><%= job.employment %></td>
+                                    <td><%= job.trade %></td>
+                                    <td><%= job.location %></td>
+                                    <td><%= formatDate(job.dateposted) %></td>
+                                    <td><%= formatDate(job.dateexpires) %></td>
+                                    <td>
+                                        <!-- Dynamic EJS link using what the user typed -->
+                                        <a href="<%= job.applink %>" target="_blank" class="apply">Apply</a>
+                                    </td>
+                                </tr>
+                            <% } %> 
                         <% }); %>
                     </tbody>
                 </table>
