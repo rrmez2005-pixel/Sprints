@@ -32,7 +32,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('/', async(req,res) => {
     try{
         const [jobs] = await 
-        pool.query('SELECT * FROM jobs');
+        pool.query('SELECT * FROM jobs ORDER BY timestamp DESC');
         console.log(jobs);
         res.render('home', { jobs, formatDate });
     } catch(err) {
@@ -50,8 +50,8 @@ app.post('/submit-job', async(req, res) => {
     job.timestamp = new Date();
     console.log(job);
 
-    const sql = `INSERT INTO jobs (jobtitle, company, job, employment, trade, applink, location, dateposted, dateexpires)
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const sql = `INSERT INTO jobs (jobtitle, company, job, employment, trade, applink, location, dateposted, dateexpires, timestamp)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
     
     const params = [
         job.jobtitle,
@@ -62,8 +62,10 @@ app.post('/submit-job', async(req, res) => {
         job.applink,
         job.location,
         job.dateposted,
-        job.dateexpires
+        job.dateexpires,
+        job.timestamp
     ];
+
     try{
         const [result] = await pool.execute(sql, params);    
         job.id = result.insertId;
@@ -84,7 +86,7 @@ app.get('/confirm', (req,res) => {
 app.get('/jobs', async(req,res) => {
     try {
         const [jobs] = await
-        pool.query('SELECT * FROM jobs');
+        pool.query('SELECT * FROM jobs ORDER by timestamp DESC');
         console.log(jobs);
         res.render('jobs', { jobs, formatDate });
     } catch (err) {
