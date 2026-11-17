@@ -70,7 +70,7 @@ app.post('/submit-job', async(req, res) => {
         const [result] = await pool.execute(sql, params);    
         job.id = result.insertId;
 
-        console.log("A new row was inserted with ID: " + result.id);
+        console.log("A new row was inserted with ID: " + job.id);
         res.render('confirm', { job });
     } catch (err) {
         console.error('Database error: ' + err);
