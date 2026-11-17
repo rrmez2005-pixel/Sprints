@@ -1,12 +1,3 @@
-let announcement = document.getElementById("announcement");
-let message = document.getElementById("message");
-let announcementLabel = document.getElementById("announcement-label");
-
-announcement.onchange = () => {
-    message.style.display = "block";
-    announcementLabel.style.display = "block";
-}
-
 document.getElementById("jobform").onsubmit = () => {
     let isValid = true;
 
@@ -87,11 +78,6 @@ document.getElementById("jobform").onsubmit = () => {
     if(dateExpires < today || dateExpires === ""){
         document.getElementById("err-dateexpired").style.display = "block";
         isValid = false;
-    }
-
-    if(announcement.checked && message.value.trim() === ""){
-        document.getElementById("message-err").style.display = "block";
-        isValid= false;
     }
 
     return isValid;
