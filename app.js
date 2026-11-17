@@ -65,12 +65,17 @@ app.post('/submit-job', async(req, res) => {
         job.dateposted,
         job.dateexpires
     ];
+    try{
+        const [result] = await pool.execute(sql, params);    
+        job.id = result.insertId;
 
-    const [result] = await pool.execute(sql, params);    
-    job.id = result.insertId;
-
-    console.log("A new row was inserted with ID: " + result.id);
-    res.render('confirm', { job });
+        console.log("A new row was inserted with ID: " + result.id);
+        res.render('confirm', { job });
+    } catch (err) {
+        console.error('Database error: ' + err);
+        res.status(500).send("Database error occured");
+    }
+    
 });
 
 app.get('/confirm', (req,res) => {
@@ -89,9 +94,9 @@ app.get('/jobs', async(req,res) => {
     } 
 });
 
-app.get('/announcements', (req,res) => {
-    res.render('announcement', { jobs, formatDate });
-});
+// app.get('/announcements', (req,res) => {
+//     res.render('announcement', { jobs, formatDate });
+// });
 
 app.listen(PORT, ()=> {
     console.log(`Server is running at http://localhost:${PORT}`);
