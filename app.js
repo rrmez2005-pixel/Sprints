@@ -32,7 +32,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('/', async(req,res) => {
     try{
         const [jobs] = await 
-        pool.query('SELECT * FROM jobs ORDER BY dateposted DESC, id DESC');
+        pool.query('SELECT * FROM jobs WHERE dateexpires >= CURDATE() ORDER BY dateposted DESC, id DESC');
         console.log(jobs);
         res.render('home', { jobs, formatDate });
     } catch(err) {
@@ -96,7 +96,7 @@ app.get('/confirm', async(req,res) => {
 app.get('/jobs', async(req,res) => {
     try {
         const [jobs] = await
-        pool.query('SELECT * FROM jobs ORDER by dateposted DESC, id DESC');
+        pool.query('SELECT * FROM jobs WHERE dateexpires >= CURDATE() ORDER by dateposted DESC, id DESC');
         console.log(jobs);
         res.render('jobs', { jobs, formatDate });
     } catch (err) {
