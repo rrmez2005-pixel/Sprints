@@ -130,6 +130,19 @@ nav {
 .guideNav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.tradesLink {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.tradesLink:hover {
+    background-color: orange;
 }
 
 .GRCtrades {
