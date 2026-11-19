@@ -43,6 +43,7 @@ h1 {
   transform: translateY(-1px);
 }
 
+/* Mobile */
 @media (max-width: 450px) {
     #header h1 {
         font-size:1.35rem;

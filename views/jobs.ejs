@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRC Trades Jobs</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/hamburger.css">
+
+    <!-- JavaScript -->
     <script src="scripts/script.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/GRC.png">
 
     <!-- DataTable -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -14,12 +21,10 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css">
     <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
-    <!-- Favicon -->
-     <link rel="icon" href="/images/GRC.png">
     
 </head>
 <body>
-    <!-- hamburger menu is now a partial to save space -->
+    <!-- Hamburger menu is now a partial to save space -->
     <%- include('partials/hamb') %>
     <h1>Job Board</h1>
     <%- include('partials/navigation') %>
@@ -62,6 +67,7 @@
                 </table>
              </div>
              <script>
+                //DataTable JS (basically customization)
                 new DataTable('#jobtable', {
                     responsive:true,
                     pageLength: 25,
