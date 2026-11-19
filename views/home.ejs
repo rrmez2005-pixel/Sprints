@@ -25,7 +25,7 @@
         <!-- GRC website logo link -->
         <a class="tradesLink" href="https://www.greenriver.edu/students/academics/areas-of-interest/program-maps/trades-industrial-tech-aviation-natural-resources/index.html" target="_blank">
             <img id="GRCimage" src="/images/GRC.png" alt="Green River College Logo">
-            <p>Trades Info</p>
+            <p>GRC Trades</p>
         </a>
     </div>
     <header>
@@ -78,6 +78,8 @@
             <script>
                 new DataTable('#jobtable', {
                     responsive:true,
+                    pageLength: 25,
+                    lengthChange: false,
                     order: [],
                     language: {
                         emptyTable: 'No jobs available at this time'

@@ -3,7 +3,9 @@
 }
 
 body {
-    background-color:green;
+    background-image: url("/images/banner.webp");
+    background-size:cover;
+    background-repeat:no-repeat;
 }
 
 main {
@@ -26,6 +28,13 @@ main {
 
 fieldset {
     border:none;
+}
+
+form {
+    padding: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 #titlefield, #tradefield, #announcement-field {
