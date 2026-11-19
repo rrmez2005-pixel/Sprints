@@ -35,15 +35,7 @@
             Browse open positions, or add a job if you're an employer looking to hire.</p>
         </div>
     </header>
-    <nav>
-        <div id="navigation">
-            <!-- <a href="https://www.greenriver.edu/students/mygreenriver.html">GRC Home</a>
-            <a href="/jobs">View Job board</a>
-            <a href="/announcements">Announcements</a> -->
-            <a href="/add-job">Add job</a>
-            <a href="https://www.greenriver.edu/students/academics/areas-of-interest/program-maps/trades-industrial-tech-aviation-natural-resources/index.html" target="blank">GRC Trades</a>
-        </div>
-    </nav>
+
     <main>
         <div id="main">
             <!-- Job data table goes here -->
@@ -86,14 +78,13 @@
             </div>
             <script>
                 new DataTable('#jobtable', {
-
                     responsive:true,
-
+                    order: [],
                     language: {
                         emptyTable: 'No jobs available at this time'
                     },
                     columnDefs: [
-                        { orderable: false, targets: 7 }
+                        { orderable: false, targets: 8 }
                     ]
                 });
             </script>

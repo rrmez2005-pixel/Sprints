@@ -21,8 +21,8 @@
 <body>
     <!-- hamburger menu is now a partial to save space -->
     <%- include('partials/hamb') %>
-
     <h1>Job Board</h1>
+    <%- include('partials/navigation') %>
     <main>
         <div id="main">
             <!-- Job data table goes here -->
@@ -66,12 +66,12 @@
              <script>
                 new DataTable('#jobtable', {
                     responsive:true,
-
+                    order: [],
                     language: {
                         emptyTable: 'No jobs available at this time'
                     },
                     columnDefs: [
-                        { orderable: false, targets: 7}
+                        { orderable: false, targets: 8}
                     ]
                 });
              </script>

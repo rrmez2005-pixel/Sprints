@@ -13,10 +13,9 @@
   <!-- hamburger menu is now a partial to save space -->
     <%- include('partials/hamb') %>
 
-  <h1>Confirmed - Job info below ▽</h1>
-
+  <h1>Confirmed - Job entry summary </h1>
+  <div id="main">
     <h2>Job info: </h2>
-
     <p>Job Title: <%= job.jobtitle %></p>
     <p>Company: <%= job.company %></p>
     <p>Job Type: <%= job.job %></p>
@@ -26,7 +25,7 @@
     <p>Date Posted: <%= job.dateposted %></p>
     <p>Date Expires: <%= job.dateexpires %></p>
     <p>Application Link: <a href="<%= job.applink %>" target="_blank" class="apply"><%= job.applink %></a></p>
-  
+  </div> 
   <div id="navigation">
     <a href="/add-job">Add another job</a>
     <a href="/">Go home</a>
