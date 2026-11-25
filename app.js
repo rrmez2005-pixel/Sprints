@@ -17,8 +17,6 @@ const app = express();
 
 const PORT = 4000;
 
-const jobs = [];
-
 function formatDate(value) {
     return new Date(value).toLocaleDateString('en-US', {dateStyle:'short',timeZone: 'UTC'});
 }
