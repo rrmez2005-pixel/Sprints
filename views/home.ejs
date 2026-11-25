@@ -73,7 +73,7 @@
                                     <td><%= job.location %></td>
                                     <td><%= formatDate(job.dateposted) %></td>
                                     <td><%= formatDate(job.dateexpires) %></td>
-                                    <td>
+                                    <td data-priority="1">
                                         <!-- Dynamic EJS link using what the user typed -->
                                         <a href="<%= job.applink %>" target="_blank" class="apply">Apply</a>
                                     </td>
@@ -93,7 +93,9 @@
                         emptyTable: 'No jobs available at this time'
                     },
                     columnDefs: [
-                        { orderable: false, targets: 8 }
+                        { orderable: false, targets: 8 },
+                        {responsivePriority: 1, targets: 0},
+                        {responsivePriority: 2, targets: -1}
                     ]
                 });
             </script>
