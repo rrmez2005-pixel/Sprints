@@ -118,7 +118,7 @@ nav {
     margin-top: 3.5rem;
 }
 
-#GRCimage {
+.GRCimage {
     max-width: 50px;
     max-height: 50px;
     width: auto;
