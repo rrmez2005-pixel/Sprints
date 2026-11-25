@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRC Trades Job Board</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" href="/images/GRC.png">
     <link rel="stylesheet" href="styles/hamburger.css">
+
+    <!-- JavaScript -->
     <script src="scripts/script.js" defer></script>
+
+    <!-- Favicon -->
+     <link rel="icon" href="/images/GRC.png">
 
     <!-- DataTable -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -23,9 +29,10 @@
         <%- include('partials/hamb') %>
         
         <!-- GRC website logo link -->
-        <a href="https://www.greenriver.edu/students/academics/areas-of-interest/program-maps/trades-industrial-tech-aviation-natural-resources/index.html" target="blank">
+        <a class="tradesLink" href="https://www.greenriver.edu/students/academics/areas-of-interest/program-maps/trades-industrial-tech-aviation-natural-resources/index.html" target="_blank">
             <img id="GRCimage" src="/images/GRC.png" alt="Green River College Logo">
-        </a> <p>Trades</p>
+            <p>GRC Trades</p>
+        </a>
     </div>
     <header>
         <div id="header">
@@ -36,6 +43,7 @@
         </div>
     </header>
 
+    <!-- Homepage DataTable -->
     <main>
         <div id="main">
             <!-- Job data table goes here -->
@@ -56,7 +64,6 @@
                     </thead>
                     <tbody>
                         <% jobs.forEach(job => { %>
-                            <% if(job.dateexpires >= new Date()) { %>
                                 <tr>
                                     <td><%= job.jobtitle %></td>
                                     <td><%= job.company %></td>
@@ -71,14 +78,16 @@
                                         <a href="<%= job.applink %>" target="_blank" class="apply">Apply</a>
                                     </td>
                                 </tr>
-                            <% } %> 
                         <% }); %>
                     </tbody>
                 </table>
             </div>
             <script>
+                //DataTable JS (basically customization)
                 new DataTable('#jobtable', {
                     responsive:true,
+                    pageLength: 25,
+                    lengthChange: false,
                     order: [],
                     language: {
                         emptyTable: 'No jobs available at this time'

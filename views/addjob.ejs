@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRC Trades Add Job</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/hamburger.css">
-    <script src="scripts/script.js" defer></script>
-    
     <link rel="stylesheet" href="styles/addjobstyles.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/script.js" defer></script>
     <script src="/scripts/job.js" defer></script>
+
+    <!-- Favicon -->
     <link rel="icon" href="/images/GRC.png">
     
 </head>
 <body>
     <main>
-    <!-- hamburger menu is now a partial to save space -->
+    <!-- Hamburger menu is now a partial to save space -->
     <%- include('partials/hamb') %>
-
-
         <div id="main">
             <h1>Add a job</h1>
             <form id="jobform" action="/submit-job" method="post" novalidate>

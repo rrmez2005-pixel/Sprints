@@ -1,10 +1,15 @@
+//Imports express module
 import express from 'express';
 
+//Imports mysql2 module
+//mysql2 allows Node.js to communicate with a MySQL database
 import mysql2 from 'mysql2';
 
+//Imports .env
 import dotenv from 'dotenv';
 dotenv.config();
 
+//Creates a connection pool
 const pool = mysql2.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -13,24 +18,31 @@ const pool = mysql2.createPool({
     port: process.env.DB_PORT
 }).promise();
 
+//Creates an instance of an express application
 const app = express();
 
+//Define a port number for our server to listen on
 const PORT = 4000;
 
 function formatDate(value) {
     return new Date(value).toLocaleDateString('en-US', {dateStyle:'short',timeZone: 'UTC'});
 }
 
+//Enables static file serving
 app.use(express.static('public'));
 
+//Sets view engine to EJS
 app.set('view engine', 'ejs');
 
+//Adds "middleware" to allow the app to parse form data
+//Access form data through req.body
 app.use(express.urlencoded({extended: true}));
 
+//Define a default route ("/")
 app.get('/', async(req,res) => {
     try{
         const [jobs] = await 
-        pool.query('SELECT * FROM jobs ORDER BY dateposted DESC, id DESC');
+        pool.query('SELECT * FROM jobs WHERE dateexpires >= CURDATE() ORDER BY dateposted DESC, id DESC');
         console.log(jobs);
         res.render('home', { jobs, formatDate });
     } catch(err) {
@@ -39,10 +51,12 @@ app.get('/', async(req,res) => {
     } 
 });
 
+//Add a route to the page to for adding jobs
 app.get('/add-job', (req,res) => {
     res.render('addjob');
 });
 
+//Add a route to process job postings
 app.post('/submit-job', async(req, res) => {
     const job = req.body;
     job.timestamp = new Date();
@@ -77,6 +91,7 @@ app.post('/submit-job', async(req, res) => {
     
 });
 
+//Add a route for the confirmation page
 app.get('/confirm', async(req,res) => {
     try{
         const [jobs] = await 
@@ -91,10 +106,11 @@ app.get('/confirm', async(req,res) => {
     } 
 });
 
+//Add a route for the jobs board page
 app.get('/jobs', async(req,res) => {
     try {
         const [jobs] = await
-        pool.query('SELECT * FROM jobs ORDER by dateposted DESC, id DESC');
+        pool.query('SELECT * FROM jobs WHERE dateexpires >= CURDATE() ORDER by dateposted DESC, id DESC');
         console.log(jobs);
         res.render('jobs', { jobs, formatDate });
     } catch (err) {
@@ -107,6 +123,7 @@ app.get('/jobs', async(req,res) => {
 //     res.render('announcement', { jobs, formatDate });
 // });
 
+//Start the server on the desginated port
 app.listen(PORT, ()=> {
     console.log(`Server is running at http://localhost:${PORT}`);
 });

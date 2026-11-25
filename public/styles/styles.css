@@ -130,6 +130,19 @@ nav {
 .guideNav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.tradesLink {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.tradesLink:hover {
+    background-color: orange;
 }
 
 .GRCtrades {
@@ -142,6 +155,7 @@ nav {
     overflow-x: auto;
 }
 
+/* Mobile */
 @media (max-width: 450px) {
     #header h1 {
         font-size:1.35rem;
@@ -166,4 +180,4 @@ nav {
     #main {
         margin-top:3.5rem;
     }
-  }
+}
