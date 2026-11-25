@@ -25,7 +25,7 @@ const app = express();
 const PORT = 4000;
 
 function formatDate(value) {
-    return new Date(value).toLocaleDateString('en-US', {dateStyle:'short',timeZone: 'UTC'});
+    return new Date(value).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
 }
 
 //Enables static file serving

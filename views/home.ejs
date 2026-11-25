@@ -57,8 +57,7 @@
                             <th>Employment</th>
                             <th>Trade</th>
                             <th>Location</th>
-                            <th>Date Posted</th>
-                            <th>Date Expires</th>
+                            <th>Apply By</th>
                             <th>Apply</th>
                         </tr>
                     </thead>
@@ -71,8 +70,7 @@
                                     <td><%= job.employment %></td>
                                     <td><%= job.trade %></td>
                                     <td><%= job.location %></td>
-                                    <td><%= formatDate(job.dateposted) %></td>
-                                    <td><%= formatDate(job.dateexpires) %></td>
+                                    <td><%= formatDate(job.dateexpires)%></td>
                                     <td>
                                         <!-- Dynamic EJS link using what the user typed -->
                                         <a href="<%= job.applink %>" target="_blank" class="apply">Apply</a>
@@ -93,7 +91,8 @@
                         emptyTable: 'No jobs available at this time'
                     },
                     columnDefs: [
-                        { orderable: false, targets: 8 }
+                        { orderable: false, targets: 7 },
+            
                     ]
                 });
             </script>
