@@ -40,7 +40,6 @@
             <option value="Welding">Welding</option>
         </select>
     </div>
-
     <main>
         <div id="main">
             <!-- Job data table goes here -->
@@ -91,7 +90,12 @@
                     },
                     columnDefs: [
                         { orderable: false, targets: 8}
-                    ]
+                    ],
+                    layout: {
+                    topStart: null,
+                    topEnd: null,
+                    top: 'search'
+                    }  
                 });
              </script>
         </div>
