@@ -69,7 +69,7 @@ app.post('/submit-job', async(req, res) => {
         job.jobtitle,
         job.company,
         job.job,
-        job.employment,
+        job.employment || "Not Specified",
         job.trade,
         job.applink,
         job.location,

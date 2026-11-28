@@ -5,8 +5,6 @@ document.getElementById("jobform").onsubmit = () => {
 
     let title = document.getElementById("jobtitle").value.trim();
     let company = document.getElementById("company").value;
-    let employmentSelected = false;
-    let employment = document.getElementsByName("employment");
     let trade = document.getElementById("trade").value;
     let appLink = document.getElementById("applink").value;
     let location = document.getElementById("location").value.trim();
@@ -16,7 +14,7 @@ document.getElementById("jobform").onsubmit = () => {
     let jobType = document.getElementsByName("job");
 
     const today = new Date().toLocaleDateString("en-CA");
-
+    const employment = req.body.employment || "Not specified";
     const urlRegex = /^https?:\/\/(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?::\d{2,5})?(?:[/?#]\S*)?$/i;
 
     if(title === ""){
@@ -34,19 +32,8 @@ document.getElementById("jobform").onsubmit = () => {
         }
     }
 
-    for(let i = 0; i < employment.length; i++){
-        if(employment[i].checked){
-            employmentSelected = true;
-        }
-    }
-
     if(!jobTypeSelected){
         document.getElementById("err-job").style.display = "block";
-        isValid = false;
-    }
-
-    if(!employmentSelected){
-        document.getElementById("err-employment").style.display = "block";
         isValid = false;
     }
 
