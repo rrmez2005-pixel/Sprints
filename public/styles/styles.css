@@ -87,7 +87,7 @@ nav {
 }
 
 .apply:hover {
-    background-color:blue;
+    background-color: orange;
 }
 
 #navigation {
@@ -142,7 +142,7 @@ nav {
 }
 
 .tradesLink:hover {
-    background-color: orange;
+    background-color: rgb(38, 185, 58);
 }
 
 .GRCtrades {
@@ -163,6 +163,15 @@ select{
     width: 11.25rem;
     height: 30px;
     
+}
+
+#trades-filter,
+#trades-filter::picker(select) {
+    appearance: base-select;
+}
+
+#trades-filter option:hover {
+    background-color: orange;
 }
 
 .dt-search {

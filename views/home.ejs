@@ -49,7 +49,7 @@
                 <div id="filter">
                     <lable for="trades-filter">Filter:</lable>
                     <select id="trades-filter">
-                        <option value="none"> View by Trade</option>
+                        <option value="none"> All Trades</option>
                         <option value="Automotive">Automotive</option>
                         <option value="Carpentry">Carpentry</option>
                         <option value="Manufacturing">Manufacturing</option>
@@ -97,7 +97,8 @@
                     lengthChange: false,
                     order: [],
                     language: {
-                        emptyTable: 'No jobs available at this time'
+                        emptyTable: 'No jobs available at this time',
+                        zeroRecords: 'No jobs listed for this trade at the moment'
                     },
                     columnDefs: [
                         { orderable: false, targets: 7 },
