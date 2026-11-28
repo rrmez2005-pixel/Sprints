@@ -9,9 +9,10 @@ document.getElementById("jobform").onsubmit = () => {
     let appLink = document.getElementById("applink").value;
     let location = document.getElementById("location").value.trim();
     let dateExpires = document.getElementById("dateexpires").value;
-
+    let jobType = document.getElementsByName("job");
     const today = new Date().toLocaleDateString("en-CA");
     const urlRegex = /^https?:\/\/(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+    let jobTypeSelected = false;
 
     if(title === ""){
         document.getElementById("err-title").style.display = "block";
@@ -25,6 +26,15 @@ document.getElementById("jobform").onsubmit = () => {
 
     if(trade === "none"){
         document.getElementById("err-trade").style.display = "block";
+        isValid = false;
+    }
+    for(let i = 0; i < jobType.length; i++){
+        if(jobType[i].checked){
+            jobTypeSelected = true;
+        }
+    }
+    if(!jobTypeSelected){
+        document.getElementById("err-job").style.display = "block";
         isValid = false;
     }
 
