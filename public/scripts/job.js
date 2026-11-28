@@ -8,14 +8,11 @@ document.getElementById("jobform").onsubmit = () => {
     let trade = document.getElementById("trade").value;
     let appLink = document.getElementById("applink").value;
     let location = document.getElementById("location").value.trim();
-    let datePosted = document.getElementById("dateposted").value;
     let dateExpires = document.getElementById("dateexpires").value;
-    let jobTypeSelected = false;
     let jobType = document.getElementsByName("job");
-
     const today = new Date().toLocaleDateString("en-CA");
-    const employment = req.body.employment || "Not specified";
     const urlRegex = /^https?:\/\/(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+    let jobTypeSelected = false;
 
     if(title === ""){
         document.getElementById("err-title").style.display = "block";
@@ -26,19 +23,18 @@ document.getElementById("jobform").onsubmit = () => {
         document.getElementById("err-company").style.display = "block";
         isValid = false;
     }
+
+    if(trade === "none"){
+        document.getElementById("err-trade").style.display = "block";
+        isValid = false;
+    }
     for(let i = 0; i < jobType.length; i++){
         if(jobType[i].checked){
             jobTypeSelected = true;
         }
     }
-
     if(!jobTypeSelected){
         document.getElementById("err-job").style.display = "block";
-        isValid = false;
-    }
-
-    if(trade === "none"){
-        document.getElementById("err-trade").style.display = "block";
         isValid = false;
     }
 
@@ -54,11 +50,6 @@ document.getElementById("jobform").onsubmit = () => {
 
     if(location === ""){
         document.getElementById("err-location").style.display = "block";
-        isValid = false;
-    }
-
-    if(datePosted === ""){
-        document.getElementById("err-dateposted").style.display = "block";
         isValid = false;
     }
 
