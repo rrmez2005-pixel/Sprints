@@ -143,6 +143,7 @@ nav {
 
 .tradesLink:hover {
     background-color: rgb(38, 185, 58);
+    border-radius:1rem;
 }
 
 .GRCtrades {
