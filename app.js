@@ -62,18 +62,17 @@ app.post('/submit-job', async(req, res) => {
     job.timestamp = new Date();
     console.log(job);
 
-    const sql = `INSERT INTO jobs (jobtitle, company, job, employment, trade, applink, location, dateposted, dateexpires, timestamp)
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const sql = `INSERT INTO jobs (jobtitle, company, job, employment, trade, applink, location, dateexpires, timestamp)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)`;
     
     const params = [
         job.jobtitle,
         job.company,
         job.job,
-        job.employment || "Not Specified",
+        job.employment || null,
         job.trade,
         job.applink,
         job.location,
-        job.dateposted,
         job.dateexpires,
         job.timestamp
     ];
