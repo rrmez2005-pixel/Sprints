@@ -122,6 +122,10 @@ app.get('/jobs', async(req,res) => {
 //     res.render('announcement', { jobs, formatDate });
 // });
 
+app.get("/modal-login", (req, res) => {
+    res.render("modal-login");
+});
+
 //Start the server on the desginated port
 app.listen(PORT, ()=> {
     console.log(`Server is running at http://localhost:${PORT}`);
