@@ -90,6 +90,10 @@ nav {
     background-color: orange;
 }
 
+.apply:visited {
+    background-color:rgb(209, 116, 1);
+}
+
 #navigation {
     display:flex;
     gap:2rem;
