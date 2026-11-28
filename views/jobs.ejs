@@ -28,22 +28,22 @@
     <%- include('partials/hamb') %>
     <h1>Job Board</h1>
     <%- include('partials/navigation') %>
-    <!-- Drop down trades filter -->
-    <div id="filter">
-        <lable for="trades-filter">Filter</lable>
-        <select id="trades-filter">
-            <option value="none"> View by Trade</option>
-            <option value="Automotive">Automotive</option>
-            <option value="Carpentry">Carpentry</option>
-            <option value="Manufacturing">Manufacturing</option>
-            <option value="Mechatronics">Mechatronics</option>
-            <option value="Welding">Welding</option>
-        </select>
-    </div>
     <main>
         <div id="main">
             <!-- Job data table goes here -->
              <div class="table-wrap">
+                <!-- Drop down trades filter -->
+                <div id="filter">
+                    <lable for="trades-filter">Filter:</lable>
+                    <select id="trades-filter">
+                        <option value="none"> View by Trade</option>
+                        <option value="Automotive">Automotive</option>
+                        <option value="Carpentry">Carpentry</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Mechatronics">Mechatronics</option>
+                        <option value="Welding">Welding</option>
+                    </select>
+                </div>
                 <table id="jobtable">
                     <thead>
                         <tr>

@@ -40,23 +40,23 @@
             you can find job postings for Green River trades students and graduates.</p>
         </div>
     </header>
-    <!-- Drop down trades filter -->
-     <div id="filter">
-        <lable for="trades-filter">Filter</lable>
-        <select id="trades-filter">
-            <option value="none"> View by Trade</option>
-            <option value="Automotive">Automotive</option>
-            <option value="Carpentry">Carpentry</option>
-            <option value="Manufacturing">Manufacturing</option>
-            <option value="Mechatronics">Mechatronics</option>
-            <option value="Welding">Welding</option>
-        </select>
-     </div>
     <!-- Homepage DataTable -->
     <main>
         <div id="main">
             <!-- Job data table goes here -->
              <div class="table-wrap">
+                <!-- Drop down trades filter -->
+                <div id="filter">
+                    <lable for="trades-filter">Filter:</lable>
+                    <select id="trades-filter">
+                        <option value="none"> View by Trade</option>
+                        <option value="Automotive">Automotive</option>
+                        <option value="Carpentry">Carpentry</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Mechatronics">Mechatronics</option>
+                        <option value="Welding">Welding</option>
+                    </select>
+                </div>
                 <table id="jobtable" class="display no wrap" style="width:100%">
                     <thead>
                         <tr>
